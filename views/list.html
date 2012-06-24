@@ -1,0 +1,28 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>#{t:Type}</th>
+			<th>#{t:Title}</th>
+			<th class="date">#{t:To fill}</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<wdp:foreach>
+			<tr>
+				<td class="type">#{@type.upcase()} <span class="duration">#{@duration}</span></td>
+				<td class="title">
+					<h3><a href="#{@url}">#{@title}</a></h3>
+					
+					<div class="excerpt">#{@excerpt=}</div>
+
+					<wdp:choose>
+						<wdp:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></wdp:when>
+						<wdp:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></wdp:otherwise>
+					</wdp:choose>
+				</td>
+				<td class="date">#{@start}</td>
+			</tr>
+		</wdp:foreach>
+	</tbody>
+</table>

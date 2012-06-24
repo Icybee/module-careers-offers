@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.view--careers-offers--view dl {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.view--careers-offers--view dt {
+	background: #f9f9f9;
+	border-right: 1px solid #DDD;
+	float: left;
+	margin-right: 10px;
+	padding: 5px 5px 5px 10px;
+	text-align: left;
+	width: 20ex;
+}
+
+.view--careers-offers--view dd {
+	font-style: normal;
+	margin-left: 2px;
+	padding: 5px;
+}
+
+.view--careers-offers--view dd+dt+dd,
+.view--careers-offers--view dt+dd+dt {
+	border-top: 1px solid #ddd;
+}
+
+.view--careers-offers--list h3 {
+	margin-top: 0;
+}
+
+.view--careers-offers--apply .form-before {
+	border-bottom: 1px dashed #ccc;
+	margin-bottom: 1em;
+}
+
+.view--careers-offers--apply .form-before .goto-view {
+	text-align: right;
+}

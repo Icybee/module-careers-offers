@@ -1,0 +1,26 @@
+<dl>
+	<wdp:if test="@type">
+	<dt>#{t:Type:}</dt>
+	<dd>#{@type.upcase()}<wdp:if test="@duration"><span class="duree">, #{@duration}</span></wdp:if></dd>
+	</wdp:if>
+	
+	<wdp:if test="@start">
+	<dt>#{t:To fill:}</dt>
+	<dd>#{@start}</dd>
+	</wdp:if>
+</dl>
+
+<wdp:variable name="apply">
+	<wdp:choose>
+		<wdp:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></wdp:when>
+		<wdp:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></wdp:otherwise>
+	</wdp:choose>
+</wdp:variable>
+
+<h2>#{t:Details of the proposal}</h2>
+
+<div class="body">#{@=}</div>
+
+#{apply=}
+
+<wdp:node:navigation />
