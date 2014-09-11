@@ -1,21 +1,21 @@
 <dl>
-	<wdp:if test="@type">
+	<p:if test="@type">
 	<dt>#{t:Type:}</dt>
-	<dd>#{@type.upcase()}<wdp:if test="@duration"><span class="duree">, #{@duration}</span></wdp:if></dd>
-	</wdp:if>
+	<dd>#{@type.upcase()}<p:if test="@duration"><span class="duree">, #{@duration}</span></p:if></dd>
+	</p:if>
 	
-	<wdp:if test="@start">
+	<p:if test="@start">
 	<dt>#{t:To fill:}</dt>
 	<dd>#{@start}</dd>
-	</wdp:if>
+	</p:if>
 </dl>
 
-<wdp:variable name="apply">
-	<wdp:choose>
-		<wdp:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></wdp:when>
-		<wdp:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></wdp:otherwise>
-	</wdp:choose>
-</wdp:variable>
+<p:variable name="apply">
+	<p:choose>
+		<p:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></p:when>
+		<p:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></p:otherwise>
+	</p:choose>
+</p:variable>
 
 <h2>#{t:Details of the proposal}</h2>
 
@@ -23,4 +23,4 @@
 
 #{apply=}
 
-<wdp:node:navigation />
+<p:node:navigation />

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie\Modules\Careers\Offers;
+namespace Icybee\Modules\Careers\Offers;
 
 use Brickrouge\Date;
 use Brickrouge\Element;
 use Brickrouge\Form;
 use Brickrouge\Text;
 
-class EditBlock extends \ICanBoogie\Modules\Contents\EditBlock
+class EditBlock extends \Icybee\Modules\Contents\EditBlock
 {
-	protected function alter_attributes(array $attributes)
+	protected function lazy_get_attributes()
 	{
-		$attributes = parent::alter_attributes($attributes);
+		$attributes = parent::lazy_get_attributes();
 
 		$attributes[Element::GROUPS]['advanced'] = array
 		(
@@ -30,12 +30,12 @@ class EditBlock extends \ICanBoogie\Modules\Contents\EditBlock
 		return $attributes;
 	}
 
-	protected function alter_children(array $children, array &$properties, array &$attributes)
+	protected function lazy_get_children()
 	{
 		return array_merge
 		(
-			parent::alter_children($children, $properties, $attributes), array
-			(
+			parent::lazy_get_children(),
+			[
 				'subtitle' => null,
 
 				'date' => new Date
@@ -92,7 +92,7 @@ class EditBlock extends \ICanBoogie\Modules\Contents\EditBlock
 						Element::DESCRIPTION => 'metas_recipient'
 					)
 				)
-			)
+			]
 		);
 	}
 }

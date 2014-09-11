@@ -1,34 +1,37 @@
 <?php
 
-namespace ICanBoogie;
+namespace Icybee\Modules\Careers\Offers;
 
+use ICanBoogie\Module;
 use ICanBoogie\ActiveRecord\Model;
 
-return array
-(
+return
+[
 	Module::T_TITLE => 'Job offers',
 	Module::T_CATEGORY => 'contents',
 	Module::T_EXTENDS => 'contents',
-	Module::T_MODELS => array
-	(
-		'primary' => array
-		(
+	Module::T_MODELS =>
+	[
+		'primary' =>
+		[
 			Model::T_EXTENDS => 'contents',
-			Model::T_SCHEMA => array
-			(
-				'fields' => array
-				(
-					'start' => array('varchar', 80),
-					'duration' => array('varchar', 80),
-					'type' => array('varchar', 80),
+			Model::T_SCHEMA =>
+			[
+				'fields' =>
+				[
+					'start' => ['varchar', 80],
+					'duration' => ['varchar', 80],
+					'type' => ['varchar', 80],
 					'is_provided' => 'boolean'
-				)
-			)
-		)
-	),
+				]
+			]
+		]
+	],
 
-	Module::T_REQUIRES => array
-	(
+	Module::T_NAMESPACE => __NAMESPACE__,
+
+	Module::T_REQUIRES =>
+	[
 		'careers.applications' => '1.0'
-	)
-);
+	]
+];

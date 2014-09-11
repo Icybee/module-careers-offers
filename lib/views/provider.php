@@ -1,8 +1,8 @@
 <?php
 
-namespace ICanBoogie\Modules\Careers\Offers;
+namespace Icybee\Modules\Careers\Offers;
 
-class Provider extends \Icybee\Views\Contents\Provider
+class ViewProvider extends \Icybee\Modules\Contents\ViewProvider
 {
 	protected function get_return_type()
 	{

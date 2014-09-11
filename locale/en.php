@@ -6,7 +6,7 @@ return array
 	(
 		"All records" => "All job offers",
 
-		'config.element' => array
+		'config_block.element' => array
 		(
 			'description' => array
 			(
@@ -20,15 +20,23 @@ return array
 			)
 		),
 
-		'edit.element.label' => array
-		(
-			'date' => "Offer date",
-			'duration' => "Duration",
-			'is_provided' => "The position has been filled",
-			'metas_reply' => "Reply address",
-			'start' => "Hire date",
-			'type' => "Contract type"
-		),
+		'edit_block.element' => [
+
+			'description' => [
+
+				'metas_recipient' => "Sets the e-mail address to which applications are sent, replacing the one defined in the application form."
+			],
+
+			'label' => [
+
+				'date' => "Offer date",
+				'duration' => "Duration",
+				'is_provided' => "The position has been filled",
+				'metas_recipient' => "Reply address",
+				'start' => "Hire date",
+				'type' => "Contract type"
+			]
+		],
 
 		'element.label' => array
 		(
@@ -46,9 +54,6 @@ return array
 	'description' => array
 	(
 		'is_provided' => "The record remains visible on the website but it is no longer possible to
-		submit applications.",
-
-		'metas_reply' => "Sets the e-mail address to which applications are sent, replacing the
-		one defined in the application form."
+		submit applications."
 	)
 );

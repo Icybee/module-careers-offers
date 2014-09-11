@@ -1,28 +1,28 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>#{t:Type}</th>
-			<th>#{t:Title}</th>
-			<th class="date">#{t:To fill}</th>
+			<th class="cell--type">#{t:Type}</th>
+			<th class="cell--title">#{t:Title}</th>
+			<th class="cell--date">#{t:To fill}</th>
 		</tr>
 	</thead>
 	
 	<tbody>
-		<wdp:foreach>
+		<p:foreach>
 			<tr>
-				<td class="type">#{@type.upcase()} <span class="duration">#{@duration}</span></td>
-				<td class="title">
+				<td class="cell--type">#{@type.upcase()} <span class="duration">#{@duration}</span></td>
+				<td class="cell--title">
 					<h3><a href="#{@url}">#{@title}</a></h3>
-					
+
 					<div class="excerpt">#{@excerpt=}</div>
 
-					<wdp:choose>
-						<wdp:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></wdp:when>
-						<wdp:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></wdp:otherwise>
-					</wdp:choose>
+					<p:choose>
+						<p:when test="@is_provided"><div class="provided"><span class="btn btn-danger disabled">#{t:Provided}</span></div></p:when>
+						<p:otherwise><div class="apply"><a href="#{@url('apply')}" class="btn btn-primary">#{t:Apply for this job}</a></div></p:otherwise>
+					</p:choose>
 				</td>
-				<td class="date">#{@start}</td>
+				<td class="cell--date">#{@start}</td>
 			</tr>
-		</wdp:foreach>
+		</p:foreach>
 	</tbody>
 </table>

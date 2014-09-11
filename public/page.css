@@ -1,4 +1,11 @@
-@CHARSET "UTF-8";
+.view--careers-offers--list h3 {
+	margin-top: 0;
+}
+
+.view--careers-offers--list .cell--type,
+.view--careers-offers--list .cell--date {
+	white-space: nowrap;
+}
 
 .view--careers-offers--view dl {
 	border: 1px solid #ddd;
@@ -27,10 +34,6 @@
 	border-top: 1px solid #ddd;
 }
 
-.view--careers-offers--list h3 {
-	margin-top: 0;
-}
-
 .view--careers-offers--apply .form-before {
 	border-bottom: 1px dashed #ccc;
 	margin-bottom: 1em;
@@ -38,4 +41,28 @@
 
 .view--careers-offers--apply .form-before .goto-view {
 	text-align: right;
+}
+
+@media screen and (min-width: 980px) {
+
+	.view--careers-offers--apply .form-before {
+		float: right;
+		width: 48%;
+		margin-left: 2%;
+		border-bottom: 0;
+	}
+
+	.view--careers-offers--apply .form-before p:first-child {
+		margin-top: 0;
+	}
+
+	.view--careers-offers--apply .form-before p:last-child {
+		margin-bottom: 0;
+	}
+
+	.view--careers-offers--apply form {
+		float: right;
+		width: 50%;
+		margin: 0;
+	}
 }

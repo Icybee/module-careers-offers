@@ -9,46 +9,37 @@
  * file that was distributed with this source code.
  */
 
-namespace ICanBoogie\Modules\Careers\Offers;
+namespace Icybee\Modules\Careers\Offers;
 
-use Brickrouge\Form;
+use Brickrouge\Group;
 use Brickrouge\Element;
 
 /**
  * A block to configure careers offers.
  */
-class ConfigBlock extends \ICanBoogie\Modules\Contents\ConfigBlock
+class ConfigBlock extends \Icybee\Modules\Contents\ConfigBlock
 {
-	protected function alter_children(array $children, array &$properties, array &$attributes)
+	protected function lazy_get_children()
 	{
+		global $core;
+
 		$ns = $this->module->flat_id;
 
-		return array_merge
-		(
-			parent::alter_children($children, $properties, $attributes), array
-			(
-				"local[$ns.form_id]" => new \WdFormSelectorElement
-				(
-					'select', array
-					(
-						Form::LABEL => 'form_id',
-						Element::GROUP => 'primary',
-						Element::REQUIRED => true,
-						Element::DESCRIPTION => 'form_id'
-					)
-				),
+		return array_merge(parent::lazy_get_children(), [
 
-				"local[$ns.placeholder]" => new \moo_WdEditorElement
-				(
-					array
-					(
-						Form::LABEL => 'placeholder',
-						Element::GROUP => 'primary',
+			"local[$ns.form_id]" => $core->editors['form']->from([
 
-						'rows' => 6
-					)
-				)
-			)
-		);
+				Group::LABEL => 'form_id',
+				Element::REQUIRED => true,
+				Element::DESCRIPTION => 'form_id'
+			]),
+
+			"local[$ns.placeholder]" => $core->editors['rte']->from([
+
+				Group::LABEL => 'placeholder',
+
+				'rows' => 5
+			])
+		]);
 	}
 }
