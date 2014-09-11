@@ -20,7 +20,7 @@
 	"require": {
 		"php": ">=5.4.0",
 		"icanboogie/module-installer": "*",
-		"icybee/module-careers-offers": "2.x"
+		"icybee/module-careers-applications": "2.x"
 	},
 	"autoload": {
 		"classmap": [ "lib" ]
