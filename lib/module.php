@@ -11,7 +11,7 @@
 
 namespace Icybee\Modules\Careers\Offers;
 
-use Icybee\Modules\Views\View;
+use Icybee\Modules\Views\ViewOptions;
 
 class Module extends \Icybee\Modules\Contents\Module
 {
@@ -23,14 +23,14 @@ class Module extends \Icybee\Modules\Contents\Module
 
 			'view' =>[
 
-				View::ASSETS => $assets
+				ViewOptions::ASSETS => $assets
 
 			],
 
 			'list' => [
 
-				View::ASSETS => $assets,
-				View::CONDITIONS => [
+				ViewOptions::ASSETS => $assets,
+				ViewOptions::CONDITIONS => [
 
 					'order' => '-date'
 
@@ -39,10 +39,10 @@ class Module extends \Icybee\Modules\Contents\Module
 
 			'apply' => [
 
-				'title' => "Apply to an offer",
-				'provider' => __NAMESPACE__ . '\ViewProvider',
-				View::ASSETS => $assets,
-				'renders' => View::RENDERS_ONE
+				ViewOptions::TITLE => "Apply to an offer",
+				ViewOptions::PROVIDER_CLASSNAME => ViewOptions::PROVIDER_CLASSNAME_AUTO,
+				ViewOptions::ASSETS => $assets,
+				ViewOptions::RENDERS => ViewOptions::RENDERS_ONE
 
 			]
 

@@ -2,7 +2,7 @@
 
 namespace Icybee\Modules\Careers\Offers;
 
-class ViewProvider extends \Icybee\Modules\Contents\ViewProvider
+class ViewProvider extends \Icybee\Modules\Nodes\ViewProvider
 {
 	protected function get_return_type()
 	{
