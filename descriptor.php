@@ -2,36 +2,38 @@
 
 namespace Icybee\Modules\Careers\Offers;
 
-use ICanBoogie\Module;
+use ICanBoogie\Module\Descriptor;
 use ICanBoogie\ActiveRecord\Model;
 
-return
-[
-	Module::T_TITLE => 'Job offers',
-	Module::T_CATEGORY => 'contents',
-	Module::T_EXTENDS => 'contents',
-	Module::T_MODELS =>
-	[
-		'primary' =>
-		[
-			Model::T_EXTENDS => 'contents',
-			Model::T_SCHEMA =>
-			[
-				'fields' =>
-				[
+return [
+
+	Descriptor::TITLE => 'Job offers',
+	Descriptor::CATEGORY => 'contents',
+	Descriptor::INHERITS => 'contents',
+	Descriptor::MODELS => [
+
+		'primary' => [
+
+			Model::EXTENDING => 'contents',
+			Model::SCHEMA => [
+
+				'fields' => [
+
 					'start' => ['varchar', 80],
 					'duration' => ['varchar', 80],
 					'type' => ['varchar', 80],
 					'is_provided' => 'boolean'
+
 				]
 			]
 		]
 	],
 
-	Module::T_NAMESPACE => __NAMESPACE__,
+	Descriptor::NS => __NAMESPACE__,
 
-	Module::T_REQUIRES =>
-	[
+	Descriptor::REQUIRES => [
+
 		'careers.applications' => '1.0'
+
 	]
 ];

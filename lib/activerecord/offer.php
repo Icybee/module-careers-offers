@@ -13,6 +13,8 @@ namespace Icybee\Modules\Careers\Offers;
 
 class Offer extends \Icybee\Modules\Contents\Content
 {
+	const MODEL_ID = 'careers.offers';
+
 	public $start;
 	public $duration;
 	public $type;

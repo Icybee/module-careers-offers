@@ -2,7 +2,7 @@
 
 use ICanBoogie\I18n\FormattedString;
 
-if ($bind->is_provided)
+if ($this->is_provided)
 {
 	?>
 	<p><?= new FormattedString('This job has already been provided.') ?></p>
@@ -21,7 +21,7 @@ if (!$form_id)
 
 $form = $core->models['forms'][$form_id];
 
-$form->before .= $bind->excerpt . '<p class="goto-view"><a href="' . $bind->url . '">' . new FormattedString('Job details: !title', array('!title' => $bind->title)) . '</a></p>';
+$form->before .= $this->excerpt . '<p class="goto-view"><a href="' . $this->url . '">' . new FormattedString('Job details: !title', array('!title' => $this->title)) . '</a></p>';
 
 $page->node = $form;
 

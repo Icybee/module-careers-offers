@@ -1,24 +1,26 @@
 <?php
 
-return array
-(
-	'careers_offers' => array
-	(
+return [
+
+	'careers_offers' => [
+
 		"All records" => "All job offers",
 
-		'config_block.element' => array
-		(
-			'description' => array
-			(
-				'form_id' => "The form used to submit applications."
-			),
+		'config_block.element' => [
 
-			'label' => array
-			(
+			'description' => [
+
+				'form_id' => "The form used to submit applications."
+
+			],
+
+			'label' => [
+
 				'form_id' => "Application form",
 				'placeholder' => "Text placeholder when there is no job"
-			)
-		),
+
+			]
+		],
 
 		'edit_block.element' => [
 
@@ -38,22 +40,25 @@ return array
 			]
 		],
 
-		'element.label' => array
-		(
+		'element.label' => [
+
 			'experience' => 'Experience',
 			'cover_letter' => 'Details of your request',
 			'cv' => 'C.V.',
 			'apply' => 'Apply'
-		),
+
+		],
 
 		'manager.title.type' => 'Type',
 
 		'button.Send' => 'Apply'
-	),
 
-	'description' => array
-	(
+	],
+
+	'description' => [
+
 		'is_provided' => "The record remains visible on the website but it is no longer possible to
 		submit applications."
-	)
-);
+
+	]
+];
